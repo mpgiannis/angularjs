@@ -1,0 +1,107 @@
+<article>
+    
+    <div class="form-group">
+        <label class="col-md-4 control-label">{{::'common.selectPerson' | translate}}</label>
+        <div class="col-md-8">
+            <article class="input-group">
+            <input type="text" class="form-control" value="{{personInfo}}" readonly />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="openModalOrClear()" ng-disabled="disabled">
+                        <i ng-class="{'glyphicon glyphicon-search': !personId, 'glyphicon glyphicon-remove': personId}"></i>
+                    </button>
+                </span>
+            </article>
+        </div>
+    </div>
+    
+    <script type="text/ng-template" id="select-person-modal.tpl.html">
+        <div class="modal-header">
+            <h4 class="modal-title">{{::'pr.person.selectPerson.modalTitle' | translate}}</h4>
+        </div>
+        <div class="modal-body">
+            
+            <div class="row">
+                
+                <form class="form-horizontal">
+                    
+                    <article class="col-sm-12 col-md-12">
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                {{::'global.args' | translate}}
+                            </div>
+                            <div class="panel-body">
+                                
+                                <article class="col-sm-12 col-md-6">
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">{{::'pr.person.lastName' | translate}}</label>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control" name="lastName" ng-model="personArgs.lastName" />
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">{{::'pr.person.firstName' | translate}}</label>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control" name="firstName" ng-model="personArgs.firstName" />
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">{{::'pr.person.fatherFirstName' | translate}}</label>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control" name="fatherFirstName" ng-model="personArgs.fatherFirstName" />
+                                        </div>
+                                    </div>
+                                    
+                                </article>
+                                
+                                <article class="col-sm-12 col-md-6">
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">{{::'pr.person.args.birthYear' | translate}}</label>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control" ui-mask="9999" name="birthYear" ng-model="personArgs.birthYear" />
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">{{::'pr.person.afm' | translate}}</label>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control" name="afm" ng-model="personArgs.afm" />
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">{{::'pr.person.idNumber' | translate}}</label>
+                                        <div class="col-md-8">
+                                            <input type="text" class="form-control" name="idNumber" ng-model="personArgs.idNumber" />
+                                        </div>
+                                    </div>
+                                    
+                                </article>
+                                
+                                <div class="text-align-center">
+                                    <!--TODO - Να φύγει το disabled όταν γίνει σύνδεση με το api!-->
+                                    <button type="submit" disabled class="btn btn-info" ng-click="retrieveData()">{{::'global.retrieveData' | translate}}</button>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </article>
+                    
+                </form>
+            
+            </div>
+            
+            <toitsu-jq-grid grid-id="personGridId" grid-data="personGridData" single-click="personSingleClick(id)" double-click="personDoubleClick(id)"></toitsu-jq-grid>
+            
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="confirm()">{{::'global.confirm' | translate}}</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">{{::'global.cancel' | translate}}</button>
+        </div>
+    </script>
+    
+</article>

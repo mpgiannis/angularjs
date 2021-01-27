@@ -1,0 +1,38 @@
+<div>
+    <h3>This is the {{report.type}} list </h3>
+    <div>
+        <p>
+            <md-input-container>
+              <label>Search By Product Name</label>
+              <input type="text" ng-model="filt.productName" >
+            </md-input-container>
+        </p>
+        <table class="table">
+          <tr>
+            <th ng-click="doSort('id')">id</th>
+            <th ng-click="doSort('reportId')">report Id</th>
+            <th ng-click="doSort('productId')">product Id</th>
+            <th ng-click="doSort('productName')">product Name</th>
+            <th ng-click="doSort('rackId')">rackId</th>
+            <th ng-click="doSort('rackDescription')">rackDescription</th>
+            <th ng-click="doSort('amount')">amount</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+          </tr>
+          <tr ng-repeat="imex in report.importsExports | filter:filt | orderBy:sortBy:reverse">
+            <td>{{imex.id}} </td>
+            <td>{{imex.reportId | uppercase}}</td>
+            <td>{{imex.productId}} </td>
+            <td>{{imex.productName}} </td>
+            <td>{{imex.rackId}} </td>
+            <td>{{imex.rackDescription}} </td>
+            <td>{{imex.amount}} </td>
+            <!-- <td><a ui-sref="app.st.stores.racks({ storeId: store.id})">view racks</a></td> -->
+            <td><button type="button" ng-click="updateImEx(imex)" class="btn btn-info btn-xs">Edit <span class="glyphicon glyphicon-edit"></span></button></td>>
+            <td><button type="button" ng-click="deleteImEx(imex.id)" class="btn btn-danger btn-xs">Remove <span class="glyphicon glyphicon-minus"></span></button></td>
+          </tr>
+        </table>
+    </div>
+    <button type="button" ng-click="newImEx()" class="btn btn-success btn-xs">Add ImportExport <span class="glyphicon glyphicon-plus"></span></button>
+</div>
+

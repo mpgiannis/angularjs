@@ -1,0 +1,22 @@
+module.exports = [
+    './node_modules/font-awesome/css/font-awesome.css',
+    './src/vendor/modules/custom_modules/simple-line-icons/simple-line-icons.css',
+    './src/vendor/modules/metronic/plugins/bootstrap/css/bootstrap.min.css',
+    './src/vendor/modules/metronic/plugins/bootstrap-daterangepicker/daterangepicker.min.css',
+    './src/vendor/modules/metronic/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css',
+    './src/vendor/modules/metronic/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css',
+    './src/vendor/modules/metronic/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css',
+    './src/vendor/modules/metronic/plugins/bootstrap-switch/css/bootstrap-switch.min.css',
+    './src/vendor/modules/metronic/plugins/ladda/ladda-themeless.min.css',
+    './node_modules/angularjs-toaster/toaster.css',
+    './node_modules/ui-select/dist/select.css',
+    './src/vendor/modules/custom_modules/chosen/css/bootstrap-chosen.css',
+    './src/vendor/modules/metronic/css/components-md.min.css',
+    './src/vendor/modules/metronic/css/plugins-md.min.css',
+    './src/vendor/modules/metronic/css/layout.min.css',
+    './src/vendor/modules/metronic/css/light2.min.css',
+    './src/vendor/modules/metronic/css/metronic.css',
+    './src/vendor/modules/custom_modules/jqgrid/ui.jqgrid.css',
+    './src/vendor/modules/custom_modules/jstree/style.min.css',
+    './node_modules/isteven-angular-multiselect/isteven-multi-select.css'
+];

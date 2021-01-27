@@ -1,0 +1,201 @@
+<div>
+    
+    <div>
+        <button type="button" class="btn btn-success" ng-click="saveDeceased()">{{::'global.save' | translate}}</button>
+        
+        <hr />
+    </div>
+    
+    <div class="row">
+        
+        <form class="form-horizontal" id="deceasedForm" name="deceasedForm" exit-confirmation>
+            
+            <article class="col-sm-12 col-md-6">
+                
+                <uib-accordion>
+                    <uib-accordion-group is-open="personDataIsOpen">
+                        <uib-accordion-heading>
+                            {{::'pr.deceased.view.personData' | translate}}
+                            <i class="fa pull-right" ng-class="{'fa-chevron-down': personDataIsOpen, 'fa-chevron-right': !personDataIsOpen}"></i>
+                        </uib-accordion-heading>
+                        
+                        <article class="col-sm-12 col-md-12">
+                            
+                            <select-person person-id="deceased.person.id" on-select="personSelected(person)"></select-person>
+                            
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">{{::'pr.person.type' | translate}}</label>
+                                <div class="col-md-8">
+                                    <select chosen="{{::$root.chosenAttrs}}" class="form-control" ng-model="deceased.person.type" name="personType" ng-options="item.value as item.label for item in lists.personTypes">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">{{::'pr.person.lastName' | translate}}</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" name="personLastName" ng-model="deceased.person.lastName" />
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">{{::'pr.person.firstName' | translate}}</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" name="personFirstName" ng-model="deceased.person.firstName" />
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">{{::'pr.person.fatherFirstName' | translate}}</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" name="personFatherFirstName" ng-model="deceased.person.fatherFirstName" />
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">{{::'pr.person.gender' | translate}}</label>
+                                <div class="col-md-8">
+                                    <select chosen="{{::$root.chosenAttrs}}" class="form-control" ng-model="deceased.person.gender" name="personGender" ng-options="item.value as item.label for item in lists.genders">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">TestCheckbox</label>
+                                <div class="col-md-8">
+                                    <toitsu-checkbox name="personTestCheckbox" model="deceased.person.testCheckbox"></toitsu-checkbox>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">TestRadio</label>
+                                <div class="col-md-8">
+                                    <span ng-repeat="birthDateType in lists.birthDateTypes">
+                                        <label class="toitsu-radio">
+                                            <input type="radio" class="radiobox" ng-model="deceased.person.testRadio" name="personTestRadio" ng-value="birthDateType.ordinal" />
+                                            <span>{{birthDateType.label}}</span>
+                                        </label>
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">TestFirstNumber</label>
+                                <div class="col-md-8">
+                                    <input type="text" toitsu-number hide-thousands="true" class="form-control" name="testFirstNumber" ng-model="deceased.testFirstNumber" />
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">TestSecondNumber</label>
+                                <div class="col-md-8">
+                                    <input type="text" toitsu-number is-float="true" class="form-control" name="testSecondNumber" ng-model="deceased.testSecondNumber" />
+                                </div>
+                            </div>
+                            
+                        </article>
+                    </uib-accordion-group>
+                </uib-accordion>
+            
+            </article>
+            
+            <article class="col-sm-12 col-md-6">
+                
+                <uib-accordion>
+                    <uib-accordion-group is-open="deceasedDataIsOpen">
+                        <uib-accordion-heading>
+                            {{::'pr.deceased.view.deceasedData' | translate}}
+                            <i class="fa pull-right" ng-class="{'fa-chevron-down': deceasedDataIsOpen, 'fa-chevron-right': !deceasedDataIsOpen}"></i>
+                        </uib-accordion-heading>
+                        
+                        <article class="col-sm-12 col-md-12">
+                            
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">{{::'pr.deceased.deathDate' | translate}}</label>
+                                <div class="col-md-8">
+                                    <compact-datetimepicker model="deceased.deathDate" name="deathDate" type="D"></compact-datetimepicker>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">{{::'pr.deceased.deathCause' | translate}}</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" name="deathCause" ng-model="deceased.deathCause" />
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">{{::'pr.deceased.deathActNo' | translate}}</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" name="deathActNo" ng-model="deceased.deathActNo" />
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">{{::'pr.deceased.deathActVol' | translate}}</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" name="deathActVol" ng-model="deceased.deathActVol" />
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">{{::'pr.deceased.deathActYear' | translate}}</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" ui-mask="9999" name="deathActYear" ng-model="deceased.deathActYear" />
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">{{::'pr.deceased.deathRegisterOfficeId' | translate}}</label>
+                                <div class="col-md-8">
+                                    <select chosen="{{::$root.chosenAttrs}}" class="form-control" ng-model="deceased.deathRegisterOfficeId" name="deathRegisterOfficeId" ng-options="item.id as item.name for item in lists.registerOffices">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">{{::'pr.deceased.deathCountryId' | translate}}</label>
+                                <div class="col-md-8">
+                                    <select chosen="{{::$root.chosenAttrs}}" class="form-control" ng-model="deceased.deathCountryId" name="deathCountryId" ng-options="item.id as item.name for item in lists.countries">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">{{::'pr.deceased.deathPlace' | translate}}</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" name="deathPlace" ng-model="deceased.deathPlace" />
+                                </div>
+                            </div>
+                            
+                        </article>
+                    </uib-accordion-group>
+                </uib-accordion>
+            
+            </article>
+        
+        </form>
+    
+    </div>
+    
+    <div class="row">
+        
+        <uib-tabset active="active">
+            <uib-tab index="0" heading="{{::'pr.deceased.view.tab.placements' | translate}}">
+                <h4>Placements go here</h4>
+            </uib-tab>
+            <uib-tab index="1" heading="{{::'pr.deceased.view.tab.relations' | translate}}"">
+                <h4>Relations go here</h4>
+            </uib-tab>
+            <uib-tab index="2" heading="{{::'pr.deceased.view.tab.charges' | translate}}"">
+                <h4>Charges go here</h4>
+            </uib-tab>
+        </uib-tabset>
+        
+    </div>
+
+</div>

@@ -1,0 +1,44 @@
+<div>
+    <h3>Add New Product</h3>
+<!--    <p>Name : <input type="text" ng-model="product.name" placeholder="Enter name here"></p>
+    <p>Description : <input type="text" ng-model="product.description" placeholder="Enter description here"></p>
+    <p>Barcode : <input type="text" ng-model="product.barcode" placeholder="Enter barcode here" ng-pattern="/^[1-9]{1,5}$/"></p>
+    <p>Measure Unit : <input type="text" ng-model="product.measureUnit" placeholder="Enter measureUnit here"></p>
+
+    <button type="button" ng-click="saveProduct()" class="btn btn-success btn-xs">Finish </button>
+
+    <input type="number" ng-model="price" name="price_field" ng-pattern="/^[0-9]{1,7}$/" required>
+    <span ng-show="price.$error.pattern">Not a valid number!</span>
+    <input type="submit" value="submit"/> -->
+
+    <form name="myForm" ng-submit="saveProduct()">
+        <p>
+            <md-input-container>
+                <label>Name </label>
+                <input type="text" ng-model="product.name" >
+            </md-input-container>
+        </p>
+        <p>
+            <md-input-container>
+                <label>Description</label>
+                <input type="text" ng-model="product.description" >
+            </md-input-container>
+        </p>
+        <p>
+            <md-input-container>
+                <label>Barcode</label>
+                <input type="number" ng-model="product.barcode" name="price_field" ng-pattern="/^[0-9]{1,7}$/" >
+                <span ng-show="myForm.price_field.$error.pattern">Not a valid number!</span>
+            </md-input-container>
+        </p>
+        <p>
+            <md-input-container>
+                <label>Measure Unit</label>
+                <input type="text" ng-model="product.measureUnit" >
+            </md-input-container>
+        </p>
+        <input type="submit" value="Finish" class="btn btn-success btn-xs"/>
+    </form>
+     
+</div>
+

@@ -1,0 +1,36 @@
+<div>
+    <h3>This is the Stores list </h3>
+    <div>
+        
+            <md-input-container>
+              <label>Search By Description</label>
+              <input type="text" ng-model="filt.description" >
+            </md-input-container>
+        
+        <md-table-container>
+          <table md-table style=" font-size: 150%; width: 100%; height: 150px;">
+            <thead md-head>
+              <th ng-click="doSort('id')">id</th>
+              <th ng-click="doSort('description')">description</th>
+              <th>&nbsp;</th>
+              <th>&nbsp;</th>
+              <th>&nbsp;</th>
+            </thead>
+            <tbody md-body>
+            <tr ng-repeat="store in stores | filter:filt | orderBy:sortBy:reverse ">
+              <td>{{store.id}} </td>
+              <td>{{store.description | uppercase}}</td>
+              <td><a ui-sref="app.st.stores.racks({storeId: store.id})">view racks</a></td>
+              <td><button type="button" ng-click="update(store)" class="btn btn-info btn-xs">Edit <span class="glyphicon glyphicon-edit"></span></button></td>>
+              <td><button type="button" ng-click="delete(store.id)" class="btn btn-danger btn-xs">Remove <span class="glyphicon glyphicon-minus"></span></button></td>
+           <!--  <td><button type="button" ng-click="delete(store.id)"><img  src='./src/app/st/stores/deleteImage.jpg'  width="35" height="25"   /> </button></td> -->
+            </tr>
+          </tbody>
+        </table>
+      </md-table-container>
+    </div>
+    <button type="button" ng-click="newStore()" class="btn btn-success btn-xs">Add Store <span class="glyphicon glyphicon-plus"></span></button>
+</div>
+
+
+

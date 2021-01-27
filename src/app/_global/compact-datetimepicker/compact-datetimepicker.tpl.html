@@ -1,0 +1,70 @@
+<article ng-switch="type">
+    
+    <!-- DATE -->
+    <article class="input-group" ng-switch-when="D">
+        <input type="text" class="form-control" name="{{name}}"
+               datetime-picker="dd/MM/yyyy"
+               ng-model="$parent.model"
+               ui-mask="99/99/9999"
+               model-view-value="true"
+               is-open="$parent.isOpenD"
+               enable-time="false"
+               ng-disabled="$parent.disabled"
+               min-date="mindate"
+               max-date="maxdate"
+               ng-change="dateChanged()"
+               ng-init="dateInitialized()"
+        />
+        <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="$parent.openCalendarD()" ng-disabled="$parent.disabled">
+                <i class="fa fa-calendar"></i>
+            </button>
+        </span>
+    </article>
+    
+    <!-- YEAR -->
+    <article class="input-group" ng-switch-when="Y">
+        <input type="text" class="form-control" name="{{name}}"
+               uib-datepicker-popup="{{yearOptions.formatYear}}"
+               ui-mask="9999"
+               model-view-value="true"
+               ng-model="$parent.model"
+               ng-model-options="{allowInvalid: true}"
+               ng-disabled="$parent.disabled"
+               is-open="$parent.isOpenY"
+               datepicker-options="yearOptions"
+               min-date="mindate"
+               max-date="maxdate"
+               ng-change="dateChanged()"
+               ng-init="dateInitialized()"
+        />
+        <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="$parent.openCalendarY($event)" ng-disabled="$parent.disabled">
+                <i class="fa fa-calendar"></i>
+            </button>
+        </span>
+    </article>
+    
+    <!-- DATETIME -->
+    <article class="input-group" ng-switch-default>
+        <input type="text" class="form-control"
+               datetime-picker="dd/MM/yyyy HH:mm"
+               ng-model="$parent.model"
+               ui-mask="99/99/9999 99:99"
+               model-view-value="true"
+               is-open="$parent.isOpenDt"
+               enable-time="true"
+               ng-disabled="$parent.disabled"
+               min-date="mindate"
+               max-date="maxdate"
+               ng-change="dateChanged()"
+               ng-init="dateInitialized()"
+        />
+        <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="$parent.openCalendarDt()" ng-disabled="$parent.disabled">
+                <i class="fa fa-calendar"></i>
+            </button>
+        </span>
+    </article>
+
+</article>

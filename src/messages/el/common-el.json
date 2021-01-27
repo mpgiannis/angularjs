@@ -1,0 +1,10 @@
+{
+  "common.selectPerson": "Πρόσωπο",
+  
+  "common.displayFieldRevisions.tooltip": "Ιστορικό Αλλαγών",
+  "common.displayFieldRevisions.modalTitle": "Ιστορικό Αλλαγών",
+  "common.fieldRevision.grid.fieldName": "Πεδίο",
+  "common.fieldRevision.grid.fieldValue": "Τιμή",
+  "common.fieldRevision.grid.username": "Χρήστης",
+  "common.fieldRevision.grid.timestamp": "Ημερομηνία/Ώρα"
+}

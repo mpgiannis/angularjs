@@ -1,0 +1,47 @@
+<div auth-directive class="page-sidebar navbar-collapse collapse page-sidebar-wrapper">
+    
+    <ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" ng-class="{'page-sidebar-menu-closed': settings.layout.pageSidebarClosed}">
+        
+        <li ng-if="isLoggedIn()" class="nav-item" ng-class="{active: isStNav()}">
+            <a class="nav-link nav-toggle" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-cube"></i>{{'menu.st' | translate}}
+                <span class="arrow" ng-class="{open: isStNav()}"></span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a ui-sref="app.st.amphibian.list">{{'menu.st.amphibian.list' | translate}}</a>
+                </li>
+                <li ng-click="show=true">
+                    <a ui-sref="app.st.stores.list">stores</a>
+                    <ul class="sub-menu" ng-show="show">
+                        <li>
+                            <a ui-sref="app.st.stores.products">products</a>
+                        </li>
+                        <li>
+                            <a ui-sref="app.st.stores.reports">reports</a>
+                           
+                        </li>
+                    </ul>
+                   
+                </li>
+            </ul>
+        </li>
+        
+        <li ng-if="isLoggedIn()" class="nav-item" ng-class="{active: isPrNav()}">
+            <a class="nav-link nav-toggle" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-exchange"></i>{{'menu.pr' | translate}}
+                <span class="arrow" ng-class="{open: isPrNav()}"></span>
+            </a>
+            <ul class="sub-menu">
+                <li>
+                    <a ui-sref="app.pr.deceased.list">{{'menu.pr.deceased.list' | translate}}</a>
+                </li>
+                <li>
+                    <a ui-sref="app.pr.familyGraveRight.list">{{'menu.pr.familyGraveRight.list' | translate}}</a>
+                </li>
+            </ul>
+        </li>
+    
+    </ul>
+
+</div>

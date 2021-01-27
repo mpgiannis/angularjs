@@ -1,0 +1,20 @@
+{
+  "pr.deceased.deathDate": "Ημ/νία Θανάτου",
+  "pr.deceased.deathCause": "Αιτία Θανάτου",
+  "pr.deceased.deathActNo": "Αριθμός Λ.Π. Θανάτου",
+  "pr.deceased.deathActVol": "Τόμος Λ.Π. Θανάτου",
+  "pr.deceased.deathActYear": "Έτος Λ.Π. Θανάτου",
+  "pr.deceased.deathRegisterOfficeId": "Ληξιαρχείο Θανάτου",
+  "pr.deceased.deathCountryId": "Χώρα Θανάτου",
+  "pr.deceased.deathPlace": "Τόπος Θανάτου",
+  
+  "pr.deceased.args.birthYear": "Έτος Γέννησης",
+  
+  "pr.deceased.view.personData": "Στοιχεία Προσώπου",
+  "pr.deceased.view.deceasedData": "Στοιχεία Θανόντα",
+  "pr.deceased.view.tab.placements": "Τοποθετήσεις",
+  "pr.deceased.view.tab.relations": "Συγγένειες",
+  "pr.deceased.view.tab.charges": "Χρεώσεις",
+  
+  "pr.deceased.saveSuccess": "Ο θανόντας αποθηκεύτηκε με επιτυχία."
+}

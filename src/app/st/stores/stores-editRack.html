@@ -1,0 +1,16 @@
+<div>
+    <h3>Edit Rack</h3>
+    <p>
+        <md-input-container>
+            <label>Edit Description :</label>
+            <input type="text" ng-model="newRack.description" placeholder="{{rack.description}}">
+        </md-input-container>
+    </p>
+    <p>
+        <md-input-container>
+            <label>Edit Store Id :</label>
+            <input type="text" ng-model="newRack.storeId" placeholder="{{rack.storeId}}">
+        </md-input-container>
+    </p>
+    <button type="button" ng-click="updateRack()" class="btn btn-success btn-xs">Finish </button>
+</div>

@@ -1,0 +1,28 @@
+<div class="breadcrumbs-actions" ng-show="$root.breadcrumbs.length > 0 || $root.actions.length > 0">
+    <div class="page-bar">
+        <ul class="page-breadcrumb" ng-if="$root.breadcrumbs.length > 0">
+            <li>
+                <a ui-sref="app.home">{{'menu.home' | translate}}</a>
+                <i class="fa fa-circle"></i>
+            </li>
+            <li ng-repeat="breadcrumb in $root.breadcrumbs">
+                <a ui-sref="{{breadcrumb.state}}({{breadcrumb.data}})">{{breadcrumb.title | translate}}</a>
+                <i class="fa fa-circle"></i>
+            </li>
+        </ul>
+        <div class="page-toolbar" ng-if="$root.actions.length > 0">
+            <div class="btn-group pull-right">
+                <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true"> {{'global.actions' | translate}}
+                    <i class="fa fa-angle-down"></i>
+                </button>
+                <ul class="dropdown-menu pull-right" role="menu">
+                    <li ng-repeat-start="action in $root.actions">
+                        <a ui-sref="{{action.state}}">
+                        <i ng-class="{{action-class}}"></i> {{action.title | translate}}</a>
+                    </li>
+                    <li ng-repeat-end class="divider"> </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

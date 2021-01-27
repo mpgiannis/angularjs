@@ -1,0 +1,29 @@
+label.toitsu-checkbox {
+  margin-bottom: 0;
+  margin-top: 6px;
+  cursor: pointer;
+}
+
+label.toitsu-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+label.toitsu-checkbox span {
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  position: relative;
+}
+
+label.toitsu-checkbox :checked + span:after {
+  content: '\2714';
+  font-size: 16px;
+  position: absolute;
+  top: -2px;
+  left: 1px;
+  color: #00bbd3;
+  font-weight: bold;
+}

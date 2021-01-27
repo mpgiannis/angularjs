@@ -1,0 +1,38 @@
+<div>
+    <h3>This is the Reports list </h3>
+    <div  >
+        <p>
+          <md-input-container>
+            <label>Search By Description</label>
+            <input type="text" ng-model="filt.description">
+          </md-input-container> 
+        </p>
+        <table class="table">
+          <tr>
+            <th ng-click="doSort('id')">id</th>
+            <th ng-click="doSort('dateRep')">dateRep</th>
+            <th ng-click="doSort('type')">type</th>
+            <th ng-click="doSort('descriptionReason')">descriptionReason</th>
+            <th ng-click="doSort('receivedDeliveredBy')">receivedDeliveredBy</th>
+            <th ng-click="doSort('infos')">infos</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+            
+          </tr>
+          <tr ng-repeat="report in reports | filter:filt | orderBy:sortBy:reverse">
+            <td>{{report.id}} </td>
+            <td>{{report.dateRep}} </td>
+            <td>{{report.type | uppercase}}</td>
+            <td>{{report.descriptionReason}} </td>
+            <td>{{report.receivedDeliveredBy}} </td>
+            <td>{{report.infos}} </td>
+            <td><a ui-sref="app.st.stores.importsExports({ reportId: report.id})">view importsexports</a></td>
+            <td><button type="button" ng-click="updateReport(report)" class="btn btn-info btn-xs">Edit <span class="glyphicon glyphicon-edit"></span></button></td>>
+            <td><button type="button" ng-click="deleteReport(report.id)" class="btn btn-danger btn-xs">Remove <span class="glyphicon glyphicon-minus"></span></button></td>
+            
+          </tr>
+        </table>
+    </div> 
+    <button type="button" ng-click="newReport()" class="btn btn-success btn-xs">Add Report <span class="glyphicon glyphicon-plus"></span></button>
+</div>

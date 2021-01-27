@@ -1,0 +1,31 @@
+<div>
+    <h3>Edit ImportExport</h3>
+    <p>	
+        <md-input-container>
+            <label>Product Name</label>
+            <md-select ng-model="newImex.productId" placeholder="{{imex.productName}}">
+                <md-option ng-repeat="product in products" value="{{product.id}}">
+                    {{product.name}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+    </p>
+    <p>	
+        <md-input-container>
+            <label>Rack Description</label>
+            <md-select ng-model="newImex.rackId" placeholder="{{imex.rackDescription}}">
+                <md-option ng-repeat="rack in racks" value="{{rack.id}}">
+                    {{rack.description}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+    </p>
+    <p>	
+        <md-input-container>
+            <label>Amount</label>
+            <input type="number" ng-model="newImex.amount" placeholder="{{imex.amount}}" required="" >
+        </md-input-container>
+    </p>
+    <button type="button" ng-click="updateImportExport()" class="btn btn-success btn-xs">Finish </button>
+     
+</div>

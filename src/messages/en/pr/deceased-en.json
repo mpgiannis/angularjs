@@ -1,0 +1,20 @@
+{
+  "pr.deceased.deathDate": "Death Date",
+  "pr.deceased.deathCause": "Death Cause",
+  "pr.deceased.deathActNo": "Death Act Number",
+  "pr.deceased.deathActVol": "Death Act Volume",
+  "pr.deceased.deathActYear": "Death Act Year",
+  "pr.deceased.deathRegisterOfficeId": "Death Register Office",
+  "pr.deceased.deathCountryId": "Death Country",
+  "pr.deceased.deathPlace": "Death Place",
+  
+  "pr.deceased.args.birthYear": "Birth Year",
+  
+  "pr.deceased.view.personData": "Person Data",
+  "pr.deceased.view.deceasedData": "Deceased Data",
+  "pr.deceased.view.tab.placements": "Placements",
+  "pr.deceased.view.tab.relations": "Relations",
+  "pr.deceased.view.tab.charges": "Charges",
+  
+  "pr.deceased.saveSuccess": "The deceased was saved successfully."
+}

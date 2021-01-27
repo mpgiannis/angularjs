@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title ng-bind="$root.title"></title>
+        <base href="/" />
+        <link rel="icon" type="image/png" href="../favicon.png"/>
+        
+        <link rel="stylesheet" href="./styles/vendor-styles.css" />
+        <link rel="stylesheet" href="./styles/app-styles.css" />
+        
+        <script src="./vendor.js"></script>
+        
+        <!-- inject:js -->
+        <!-- endinject -->
+    </head>
+    <body class="page-header-fixed page-footer-fixed page-sidebar-fixed page-sidebar-hide page-on-load" ng-class="{'page-content-white': settings.layout.pageContentWhite,'page-container-bg-solid': settings.layout.pageBodySolid, 'page-sidebar-closed': settings.layout.pageSidebarClosed}">
+        
+        <toitsu-spinner></toitsu-spinner>
+        
+        <toitsu-header></toitsu-header>
+        
+        <div class="clearfix"> </div>
+        
+        <toaster-container toaster-options="{{$root.toasterOptions}}"></toaster-container>
+        
+        <div class="page-container">
+            
+            <toitsu-nav></toitsu-nav>
+            
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                    <toitsu-toolbar></toitsu-toolbar>
+                    <div ui-view class="fade-in-up"></div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <toitsu-footer></toitsu-footer>
+        
+    </body>
+</html>

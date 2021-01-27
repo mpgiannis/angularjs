@@ -1,0 +1,14 @@
+{
+  "menu.home": "Home",
+
+  "menu.st": "Statics",
+  "menu.st.amphibian.list": "Amphibians",
+  "menu.st.amphibian.view": "Amphibian View",
+  
+  "menu.pr": "Processes",
+  "menu.pr.deceased.list": "Deceased",
+  "menu.pr.deceased.view": "Deceased View",
+  "menu.pr.familyGraveRight.list": "Family Grave Rights",
+  "menu.pr.familyGraveRight.view": "Family Grave Right View"
+  
+}

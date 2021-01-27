@@ -1,0 +1,38 @@
+<div>
+    <h3>Edit Product</h3>
+  <!--   <p>Name : <input type="text" ng-model="newProduct.name" placeholder="{{product.name}}"></p>
+    <p>Description : <input type="text" ng-model="newProduct.description" placeholder="{{product.description}}"></p>
+    <p>Barcode : <input type="text" ng-model="newProduct.barcode" placeholder="{{product.barcode}}"></p>
+    <p>Measure Unit : <input type="text" ng-model="newProduct.measureUnit" placeholder="{{product.measureUnit}}"></p>
+
+    <button type="button" ng-click="updateProduct()" class="btn btn-success btn-xs">Finish </button> -->
+    <form name="myForm" ng-submit="updateProduct()">
+        <p>
+            <md-input-container>
+                <label>Name </label>
+                <input type="text" ng-model="newProduct.name" placeholder="{{product.name}}">
+            </md-input-container>
+        </p>
+        <p>
+            <md-input-container>
+                <label>Description</label>
+                <input type="text" ng-model="newProduct.description" placeholder="{{product.description}}">
+            </md-input-container>
+        </p>
+        <p>
+            <md-input-container>
+                <label>Barcode</label>
+                <input type="number" ng-model="newProduct.barcode" name="price_field" ng-pattern="/^[0-9]{1,7}$/" placeholder="{{product.barcode}}">
+                <span ng-show="myForm.price_field.$error.pattern">Not a valid number!</span>
+            </md-input-container>
+        </p>
+        <p>
+            <md-input-container>
+                <label>Measure Unit</label>
+                <input type="text" ng-model="newProduct.measureUnit" placeholder="{{product.measureUnit}}">
+            </md-input-container>
+        </p>
+        <input type="submit" value="Finish" class="btn btn-success btn-xs"/>
+    </form>
+     
+</div>

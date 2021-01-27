@@ -1,0 +1,47 @@
+.btn {
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+}
+
+.btn-rounded {
+  width: 24px;
+  height: 24px;
+  border-radius: 5px;
+  border: 1px solid;
+  color: #ffffff;
+  background-color: transparent;
+  border-color: #7f94a8;
+}
+
+.btn-rounded:hover, .btn-rounded:focus, .btn-rounded:active, .btn-rounded.active, .open .dropdown-toggle.btn-rounded {
+  color: #ffffff;
+  background-color: #a4c2d6;
+  border-color: #7f94a8;
+}
+
+.btn-rounded:active, .btn-rounded.active, .open .dropdown-toggle.btn-rounded {
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+  transform: translate(1px, 1px);
+}
+
+
+.btn-head {
+  padding: 0 !important;
+  line-height: inherit !important;
+  font-size: 13px !important;
+  float: right;
+  margin-left: 5px;
+  margin-top: -1px;
+  top: 2px;
+}
+
+.btn-head:hover {
+  box-shadow: none !important;
+}
+
+.btn-head:active {
+  left: 1px;
+}

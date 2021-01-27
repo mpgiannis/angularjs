@@ -1,0 +1,96 @@
+<div>
+    
+    <div>
+        <button type="button" class="btn btn-primary" ng-click="newRecord()">{{::'global.newRecord' | translate}}</button>
+        
+        <!--TODO - Να διαγραφεί όταν γίνει σύνδεση με το api!-->
+        <button type="button" class="btn btn-primary" ng-click="tempEdit()">{{::'global.edit' | translate}}</button>
+        
+        <hr />
+    </div>
+    
+    <div class="row">
+        
+        <form class="form-horizontal">
+            
+            <article class="col-sm-12 col-md-12">
+                
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        {{::'global.args' | translate}}
+                    </div>
+                    <div class="panel-body">
+                        
+                        <article class="col-sm-12 col-md-12 col-lg-6">
+                            
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">{{::'pr.person.lastName' | translate}}</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" name="lastName" ng-model="deceasedArgs.lastName" />
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">{{::'pr.person.firstName' | translate}}</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" name="firstName" ng-model="deceasedArgs.firstName" />
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">{{::'pr.person.fatherFirstName' | translate}}</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" name="fatherFirstName" ng-model="deceasedArgs.fatherFirstName" />
+                                </div>
+                            </div>
+                            
+                        </article>
+                        
+                        <article class="col-sm-12 col-md-12 col-lg-6">
+                            
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">{{::'pr.deceased.args.birthYear' | translate}}</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" ui-mask="9999" name="birthYear" ng-model="deceasedArgs.birthYear" />
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">{{::'pr.person.idNumber' | translate}}</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" name="idNumber" ng-model="deceasedArgs.idNumber" />
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">{{::'pr.deceased.deathDate' | translate}}</label>
+                                <div class="col-md-4 no-padding-right-md col-md-list-6">
+                                    <compact-datetimepicker model="deceasedArgs.deathDateAfter" name="deathDateAfter" type="D"></compact-datetimepicker>
+                                </div>
+                                <div class="no-padding-left no-padding-right col-list-gap">
+                                    <label class="control-label">{{::'global.datetimepicker.fromTo' | translate}}</label>
+                                </div>
+                                <div class="col-md-4 no-padding-left-md col-md-list-6">
+                                    <compact-datetimepicker model="deceasedArgs.deathDateBefore" name="deathDateBefore" type="D"></compact-datetimepicker>
+                                </div>
+                            </div>
+                            
+                        </article>
+                        
+                        <div class="text-align-center">
+                            <!--TODO - Να φύγει το disabled όταν γίνει σύνδεση με το api!-->
+                            <button type="submit" disabled class="btn btn-info" ng-click="retrieveData()">{{::'global.retrieveData' | translate}}</button>
+                        </div>
+                        
+                    </div>
+                </div>
+            
+            </article>
+            
+        </form>
+    
+    </div>
+    
+    <toitsu-jq-grid grid-id="deceasedGridId" grid-data="deceasedGridData" view-url="{{::viewUrl}}"></toitsu-jq-grid>
+    
+</div>

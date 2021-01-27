@@ -1,0 +1,14 @@
+{
+  "menu.home": "Αρχική Σελίδα",
+
+  "menu.st": "Σταθερά Στοιχεία",
+  "menu.st.amphibian.list": "Αμφίβια",
+  "menu.st.amphibian.view": "Καρτέλα Αμφίβιου",
+  
+  "menu.pr": "Διαδικασίες",
+  "menu.pr.deceased.list": "Θανόντες",
+  "menu.pr.deceased.view": "Καρτέλα Θανόντα",
+  "menu.pr.familyGraveRight.list": "Παραχωρήσεις Οικογενειακών Τάφων",
+  "menu.pr.familyGraveRight.view": "Καρτέλα Παραχώρησης"
+  
+}

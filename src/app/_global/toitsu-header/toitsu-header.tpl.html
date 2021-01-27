@@ -1,0 +1,78 @@
+<div auth-directive class="page-header navbar navbar-fixed-top">
+
+    <div class="page-header-inner">
+
+        <div class="page-logo">
+            <a ui-sref="app.home">
+                <img src="./images/logo.png" alt="logo" class="logo-default" />
+            </a>
+            <!--<div class="header-logo-title">{{'global.appTitle' | translate}}</div>-->
+            <div class="menu-toggler sidebar-toggler">
+                <span></span>
+            </div>
+        </div>
+
+        <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+            <span></span>
+        </a>
+
+        <div class="top-menu">
+            <ul class="nav navbar-nav pull-right">
+                <li ng-if="isLoggedIn()">
+                    <a id="orgInfo">
+                        <span> {{getUserOrgName()}} </span>
+                    </a>
+                </li>
+                <li ng-if="isLoggedIn()" class="dropdown dropdown-extended dropdown-tasks" id="header_task_bar">
+                    <a href="#" class="dropdown-toggle" dropdown-menu-hover data-toggle="dropdown" data-close-others="true">
+                        <i class="icon-calendar"></i>
+                        <span class="badge badge-default"> {{totalActiveNotifications}} </span>
+                    </a>
+                </li>
+
+                <li class="dropdown dropdown-language">
+                    <a href="#" class="dropdown-toggle" dropdown-menu-hover data-toggle="dropdown" data-close-others="true">
+                        <img alt="{{getIconFlagLanguage()}} flag" src="./images/{{getIconFlagLanguage()}}.png">
+                        <i class="fa fa-angle-down"></i>
+
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-default">
+                        <li>
+                            <a href="#" ng-click="toggleENLanguage()">
+                                <img alt="English flag" src="./images/gb.png"> English </a>
+                        </li>
+                        <li>
+                            <a href="#" ng-click="toggleELLanguage()">
+                                <img alt="Greek flag" src="./images/gr.png"> Ελληνικά </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li ng-if="isLoggedIn()" class="dropdown dropdown-user">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-close-others="true">
+                        <img alt="" class="img-circle" src="{{getUserPicture()}}" />
+                        <span class="username username-hide-on-mobile"> {{getUserDisplayName()}} </span>
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-default">
+                        <!-- <li>
+                            <a ng-href="{{getUserProfile()}}" target="_blank">
+                                <i class="icon-user"></i> {{'global.profile' | translate}} </a>
+                        </li> -->
+                        <li>
+                            <a ng-click="logout()" href="#">
+                                <i class="icon-logout"></i> {{'global.logout' | translate}} </a>
+                        </li>
+                    </ul>
+                </li>
+                <li ng-if="!isLoggedIn()">
+                    <a ng-click="login()" href="#">
+                        <i class="icon-login" aria-hidden="true"></i> <span>{{'global.login' | translate}}</span> </a>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,73 @@
+<div>
+    <h3>Add New Report{{oraa}}</h3>
+    <p>
+        <md-content  layout-padding="" layout-margin="" class="datepickerdemoMoment">
+          <md-datepicker ng-model="mydateRep" ng-change="ctrl.onDateChanged()" md-placeholder="Enter date"></md-datepicker>
+        </md-content>
+    </p>
+    <p>	
+      <div layout="row" >
+        <span>Type of Report :</span>
+        <md-select ng-model="report.type" placeholder="Type" class="md-no-underline">
+          <md-option value="import">Import</md-option>
+          <md-option value="export">Export</md-option>
+        </md-select>
+      </div>
+    </p>
+
+    <p>	
+      <md-input-container>
+        <label>Enter descriptionReason here</label>
+        <input type="text" ng-model="report.descriptionReason" >
+      </md-input-container>
+    </p>
+    <p>
+      <md-input-container>
+        <label>Enter receivedDeliveredBy here</label>
+        <input type="text" ng-model="report.receivedDeliveredBy" >
+      </md-input-container>
+    </p>
+    <p>
+      <md-input-container>
+        <label>Enter infos here</label>
+        <input type="text" ng-model="report.infos" >
+      </md-input-container>
+    </p>
+
+    <p><button type="button" ng-click="addForm(0)" class="btn btn-success btn-xs">Add Import/Export <span class="glyphicon glyphicon-plus"></span></button></p>
+
+    <div ng-repeat="form in displayedForms track by $index">
+        <ng-include src="form"></ng-include>
+    </div>
+      
+    <script type="text/ng-template" id="newImExForm">
+        <label >
+          <md-input-container>
+            <label>Product Name</label>
+            <md-select ng-model="imexProductName[$index]" >
+                <md-option ng-repeat="product in products" value="{{product.id}}">
+                    {{product.name}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container>
+          <label>Rack Description</label>
+          <md-select ng-model="imexRackDescr[$index]" >
+              <md-option ng-repeat="rack in racks" value="{{rack.id}}">
+                  {{rack.description}}
+              </md-option>
+          </md-select>
+      </md-input-container>
+      <md-input-container>
+        <label>Amount</label>
+        <input type="number" ng-model="imexAmount[$index]">
+    </md-input-container><button ng-click="Delete($index)" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></button>
+        </label>
+    </script>
+
+
+
+    <button type="button" ng-click="saveReport()" class="btn btn-success btn-xs">Finish </button>
+     
+</div>
+

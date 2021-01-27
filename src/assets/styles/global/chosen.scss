@@ -1,0 +1,72 @@
+.chosen-container {
+  width: 100% !important;
+  max-width: 100%;
+}
+
+.chosen-container.chosen-container-single .chosen-single.chosen-single-with-deselect > span {
+  padding-right: 12px;
+}
+
+.chosen-container.chosen-container-single .chosen-single, .chosen-drop, .chosen-search > input {
+  //height: auto;
+  min-height: 24px;
+  line-height: 21px;
+}
+
+.chosen-container .chosen-single {
+  padding: 0;
+}
+
+.chosen-container-single .chosen-single span {
+  white-space: normal;
+  //padding: 6px 12px;
+  padding-left: 5px;
+  padding-top: 1px;
+}
+
+.chosen-container-single .chosen-single div {
+  position: absolute;
+  top: -1px;
+}
+
+.chosen-container-single .chosen-single abbr {
+  position: absolute;
+  top: 7px !important;
+}
+
+.chosen-container {
+  font-size: 13px;
+}
+
+.chosen-disabled {
+  opacity: 1 !important;
+  background-color: #eef1f5;
+}
+
+/**
+ * Dropup
+ */
+
+.chosen-container-dropup .chosen-drop {
+  border-bottom: 0;
+  border-top: 1px solid #aaa;
+  top: auto;
+  bottom: 40px;
+}
+
+.chosen-container-dropup.chosen-with-drop .chosen-single {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-image: none;
+}
+
+.chosen-container-dropup.chosen-with-drop .chosen-drop {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  box-shadow: none;
+  margin-bottom: -16px;
+}

@@ -1,0 +1,10 @@
+{
+  "common.selectPerson": "Person",
+  
+  "common.displayFieldRevisions.tooltip": "Revision History",
+  "common.displayFieldRevisions.modalTitle": "Revision History",
+  "common.fieldRevision.grid.fieldName": "Field",
+  "common.fieldRevision.grid.fieldValue": "Value",
+  "common.fieldRevision.grid.username": "User",
+  "common.fieldRevision.grid.timestamp": "Timestamp"
+}

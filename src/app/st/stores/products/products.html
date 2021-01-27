@@ -1,0 +1,35 @@
+<div>
+    <h3>This is the Products list </h3>
+    <div  >
+        <p> 
+            <md-input-container>
+              <label>Search By Name</label>
+              <input type="text" ng-model="filt.name" >
+            </md-input-container>
+        </p>
+        <table class="table">
+          <tr>
+            <th ng-click="doSort('id')">id</th>
+            <th ng-click="doSort('name')">name</th>
+            <th ng-click="doSort('description')">description</th>
+            <th ng-click="doSort('barcode')">barcode</th>
+            <th ng-click="doSort('measureUnit')">measureUnit</th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+            
+          </tr>
+          <tr ng-repeat="product in products | filter:filt | orderBy:sortBy:reverse">
+            <td>{{product.id}} </td>
+            <td>{{product.name}} </td>
+            <td>{{product.description | uppercase}}</td>
+            <td>{{product.barcode}} </td>
+            <td>{{product.measureUnit}} </td>
+            <!-- <td><a ui-sref="app.st.stores.importsExports({ productId: product.id})">view importsexports</a></td> -->
+            <td><button type="button" ng-click="updateProduct(product)" class="btn btn-info btn-xs">Edit <span class="glyphicon glyphicon-edit"></span></button></td>>
+            <td><button type="button" ng-click="deleteProduct(product.id)" class="btn btn-danger btn-xs">Remove <span class="glyphicon glyphicon-minus"></span></button></td>
+            
+          </tr>
+        </table>
+    </div> 
+    <button type="button" ng-click="newProduct()" class="btn btn-success btn-xs">Add Product <span class="glyphicon glyphicon-plus"></span></button>
+</div>
